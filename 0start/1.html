@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue2.x</title>
+    <style>
+      .hightlight {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        <span>这里的日期是：</span>
+        <span class="hightlight">{{date}}</span>
+        <br />
+        <span>嵌套的数据是：</span>
+        <span class="hightlight">{{obj.str}}</span>
+        <br />
+        <span>直接输出数组是：</span>
+        <span class="hightlight">{{arr}}</span>
+      </p>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          date: new Date().toLocaleString(),
+          obj: {
+            str: "嵌套对象字符串",
+          },
+          arr: [1, 2, 3],
+        },
+      })
+      setInterval(() => {
+        vm.date = new Date().toLocaleString()
+      }, 1000)
+    </script>
+  </body>
+</html>
