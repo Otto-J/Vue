@@ -37,3 +37,13 @@ arrMethods.forEach((method) => {
     oldPrototype[method].apply(this, args)
   }
 })
+
+/**
+ * 循环数组 对数组中的每一项进行观测
+ * @param {*} target
+ */
+function observerArray(target) {
+  for (let i = 0; i < target.length; i++) {
+    // observe(target[i]) // 暂时知道要处理就可以
+  }
+}
